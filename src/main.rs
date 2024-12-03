@@ -16,6 +16,7 @@ fn main() {
 fn draw_tree() {
     draw_top();
     draw_base();
+    draw_message();
 }
 
 fn draw_top() {
@@ -37,7 +38,7 @@ fn draw_base() {
         }
 
         for _s in 0..star_count {
-            print_with_delay("*".truecolor(218, 88, 66), 25);
+            print_with_delay("*".truecolor(218, 88, 66), 12);
         }
 
         print("\n")
@@ -63,7 +64,7 @@ fn draw_triangular_shape(step: i8) {
         }
 
         for _s in 0..star_count {
-            print_with_delay("*".truecolor(99, 215, 81), 25);
+            print_with_delay("*".truecolor(99, 215, 81), 12);
         }
 
         print("\n");
@@ -71,6 +72,49 @@ fn draw_triangular_shape(step: i8) {
         tmp_space_count -= 2;
         star_count += 2;
     }
+}
+
+fn draw_message() {
+    print("\n");
+
+    print_with_delay(
+        "▒  ▒▒▒▒  ▒        ▒       ▒▒       ▒▒  ▒▒▒▒  ▒▒▒▒  ▒▒▒▒  ▒  ▒▒▒▒  ▒▒      ▒▒▒      ▒▒\n"
+            .truecolor(219, 59, 72),
+        50,
+    );
+    print_with_delay(
+        "▒   ▒▒   ▒  ▒▒▒▒▒▒▒  ▒▒▒▒  ▒  ▒▒▒▒  ▒▒  ▒▒  ▒▒▒▒▒▒  ▒▒  ▒▒   ▒▒   ▒  ▒▒▒▒  ▒  ▒▒▒▒▒▒▒\n"
+            .truecolor(219, 59, 72),
+        50,
+    );
+    print_with_delay(
+        "▓        ▓      ▓▓▓       ▓▓       ▓▓▓▓    ▓▓   ▓▓▓    ▓▓▓        ▓  ▓▓▓▓  ▓▓      ▓▓\n"
+            .truecolor(219, 59, 72),
+        50,
+    );
+    print_with_delay(
+        "█  █  █  █  ███████  ███  ██  ███  █████  ████████  ██  ██  █  █  █        ███████  █\n"
+            .truecolor(219, 59, 72),
+        50,
+    );
+    print_with_delay(
+        "█  ████  █        █  ████  █  ████  ████  ███████  ████  █  ████  █  ████  ██      ██\n"
+            .truecolor(219, 59, 72),
+        50,
+    );
+
+    print_with_delay("=================".truecolor(91, 206, 250), 25);
+    print_with_delay("=================".truecolor(245, 169, 184), 25);
+    print_with_delay("=================".truecolor(255, 255, 255), 25);
+    print_with_delay("=================".truecolor(245, 169, 184), 25);
+    print_with_delay("=================".truecolor(91, 206, 250), 25);
+
+    print("\n");
+
+    print_with_delay(
+        "                                                                               - L14\n",
+        10,
+    );
 }
 
 fn print_with_delay<T: std::fmt::Display>(printable: T, delay: u64) {
