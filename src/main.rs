@@ -1,6 +1,6 @@
 use colored::Colorize;
 use std::{
-    io::{stdout, Write},
+    io::{stdin, stdout, Write},
     thread::sleep,
     time,
 };
@@ -17,6 +17,8 @@ fn draw_tree() {
     draw_top();
     draw_base();
     draw_message();
+
+    wait_for_exit();
 }
 
 fn draw_top() {
@@ -126,4 +128,10 @@ fn print_with_delay<T: std::fmt::Display>(printable: T, delay: u64) {
 fn print<T: std::fmt::Display>(printable: T) {
     print!("{}", printable);
     stdout().flush().expect("Failed to flush!");
+}
+
+fn wait_for_exit() {
+    print("\nPress any key to exit...".truecolor(200, 200, 200));
+    let mut input = String::new();
+    stdin().read_line(&mut input).expect("Failed to read line!");
 }
