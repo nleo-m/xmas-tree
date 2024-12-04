@@ -7,7 +7,8 @@ use std::{
 
 const SPACE_COUNT: i8 = 10;
 const TREE_SIZE: i8 = 4;
-const OFFSET: i8 = 32;
+const MESSAGE_WIDTH: i8 = 85;
+const OFFSET: i8 = (MESSAGE_WIDTH / 2) - TREE_SIZE;
 
 fn main() {
     draw_tree();
